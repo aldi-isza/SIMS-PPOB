@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:sims_ppob/widgets/history_card.dart';
-import 'package:sims_ppob/widgets/saldo_card.dart';
 
-class TransactionPage extends StatefulWidget {
+import '../widgets/core.dart';
+
+class TransactionPage extends StatelessWidget {
   const TransactionPage({super.key});
 
-  @override
-  State<TransactionPage> createState() => _TransactionPageState();
-}
-
-class _TransactionPageState extends State<TransactionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

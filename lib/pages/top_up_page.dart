@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sims_ppob/pages/dashboard_page.dart';
-import 'package:sims_ppob/widgets/custom_button.dart';
-import 'package:sims_ppob/widgets/custom_textfield.dart';
-import 'package:sims_ppob/widgets/grid_amount.dart';
-import 'package:sims_ppob/widgets/int_ext.dart';
-import 'package:sims_ppob/widgets/saldo_card.dart';
+import '../widgets/core.dart';
 
 class TopUpPage extends StatefulWidget {
   const TopUpPage({super.key});

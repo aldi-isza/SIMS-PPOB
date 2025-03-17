@@ -3,9 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:sims_ppob/models/banner_model.dart';
 import 'package:sims_ppob/models/payment_model.dart';
 import 'package:sims_ppob/pages/payment_page.dart';
-import 'package:sims_ppob/widgets/banner_widget.dart';
-import 'package:sims_ppob/widgets/payment_item.dart';
-import 'package:sims_ppob/widgets/saldo_card.dart';
+import '../widgets/core.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
