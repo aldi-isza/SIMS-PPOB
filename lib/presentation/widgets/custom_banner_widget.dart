@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:sims_ppob/models/banner_model.dart';
+import 'package:sims_ppob/data/models/banner_model.dart';
 
 class BannerWidget extends StatelessWidget {
   final List<BannerModel> bannerList;
