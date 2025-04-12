@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:sims_ppob/presentation/pages/dashboard_page.dart';
-import 'package:sims_ppob/presentation/pages/registration_page.dart';
-import '../widgets/widgets.dart';
+import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
+import 'package:sims_ppob/presentation/pages/registration/register_page.dart';
+import '../../widgets/widgets.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sims_ppob/presentation/widgets/int_ext.dart';
+import 'package:sims_ppob/core/extensions/int_ext.dart';
 
 class GridAmount extends StatelessWidget {
   final Function(int) onSelected;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:sims_ppob/data/models/banner_model.dart';
-import 'package:sims_ppob/data/models/payment_model.dart';
-import 'package:sims_ppob/presentation/pages/payment_page.dart';
-import '../widgets/widgets.dart';
+import 'package:sims_ppob/data/models/banner/banner_model.dart';
+import 'package:sims_ppob/data/models/payment/payment_model.dart';
+import 'package:sims_ppob/presentation/pages/payment/payment_page.dart';
+import '../../widgets/widgets.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

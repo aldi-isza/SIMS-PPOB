@@ -3,9 +3,9 @@ import 'package:gap/gap.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:sims_ppob/data/models/user_registration_model.dart'; // Import model
-import 'package:sims_ppob/presentation/pages/dashboard_page.dart';
-import '../widgets/widgets.dart';
+import 'package:sims_ppob/data/models/registration/user_registration_model.dart'; // Import model
+import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
+import '../../widgets/widgets.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});

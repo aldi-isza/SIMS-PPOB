@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sims_ppob/presentation/pages/splash_screen.dart';
+import 'package:sims_ppob/presentation/pages/splash/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
