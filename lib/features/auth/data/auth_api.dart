@@ -16,7 +16,10 @@ class AuthApi {
     final url = Uri.parse("$baseUrl/registration");
     final response = await http.post(
       url,
-      headers: {"accept": "aplication/json", "Content-Type": "aplication/json"},
+      headers: {
+        "accept": "application/json",
+        "Content-Type": "application/json",
+      },
       body: jsonEncode(request.toJson()),
     );
     return RegisterResponse.fromJson(json.decode(response.body));
@@ -27,7 +30,10 @@ class AuthApi {
     final url = Uri.parse("$baseUrl/login");
     final response = await http.post(
       url,
-      headers: {"accept": "aplication/json", "Content-Type": "aplication/json"},
+      headers: {
+        "accept": "application/json",
+        "Content-Type": "application/json",
+      },
       body: json.encode(request.toJson()),
     );
     return LoginResponse.fromJson(json.decode(response.body));

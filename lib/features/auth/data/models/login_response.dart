@@ -1,15 +1,15 @@
 class LoginResponse {
   final int status;
-  final String email;
+  final String message;
   final String? token;
 
   bool get success => status == 0;
-  LoginResponse({required this.status, required this.email, this.token});
+  LoginResponse({required this.status, required this.message, this.token});
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) {
     return LoginResponse(
       status: json["status"],
-      email: json["email"],
+      message: json["message"],
       token: json["data"]?["token"],
     );
   }

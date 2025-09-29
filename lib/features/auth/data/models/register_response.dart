@@ -2,7 +2,7 @@ class RegisterResponse {
   final int status;
   final String message;
 
-  bool get succsess => status == 0;
+  bool get success => status == 0;
 
   RegisterResponse({required this.status, required this.message});
 
