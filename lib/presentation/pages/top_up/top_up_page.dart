@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
+import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 import '../../widgets/widgets.dart';
 
 class TopUpPage extends StatefulWidget {
@@ -85,6 +86,7 @@ class _TopUpPageState extends State<TopUpPage> {
                   // tidak ada eror jika kosong
                   return null;
                 },
+                label: '',
               ),
               Gap(24),
               GridAmount(onSelected: _onAmountSelected),

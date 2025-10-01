@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sims_ppob/presentation/pages/login/login_page.dart';
+import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 import '../../widgets/widgets.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -56,7 +57,7 @@ class _ProfilePageState extends State<ProfilePage> {
             CustomTextField(
               hintText: 'Isza@nutech.com',
               prefixIcon: Icons.alternate_email,
-              editing: _isEditing,
+              label: '',
             ),
             Gap(22),
             Text('Nama Depan', style: TextStyle(fontSize: 16)),
@@ -64,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
             CustomTextField(
               hintText: 'Aldi',
               prefixIcon: Icons.person_outline,
-              editing: _isEditing,
+              label: '',
             ),
             Gap(22),
             Text('Nama Belakang', style: TextStyle(fontSize: 16)),
@@ -72,7 +73,7 @@ class _ProfilePageState extends State<ProfilePage> {
             CustomTextField(
               hintText: 'Isza',
               prefixIcon: Icons.person_outline,
-              editing: _isEditing,
+              label: '',
             ),
             Gap(24),
 

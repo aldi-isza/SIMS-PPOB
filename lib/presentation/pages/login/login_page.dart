@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:sims_ppob/features/auth/presentation/otp_verification_page.dart';
 import 'package:sims_ppob/features/auth/presentation/register_page.dart';
 import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
+import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 
 import '../../widgets/widgets.dart';
 
@@ -45,9 +47,20 @@ class LoginPage extends StatelessWidget {
                 hintText: 'Masukkan email Anda',
                 prefixIcon: Icons.alternate_email,
                 keyboardType: TextInputType.emailAddress,
+                label: 'Email',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Email tidak boleh kosong";
+                  }
+                  return null;
+                },
               ),
+
               Gap(12),
-              CustomTextFieldPass(text: 'Masukan password anda'),
+              CustomTextFieldPass(
+                label: "Password",
+                hint: 'Masukan Password anda',
+              ),
               Gap(52),
               CustomButton(
                 text: 'Masuk',
@@ -55,7 +68,10 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DashboardPage()),
+                    MaterialPageRoute(
+                      builder:
+                          (context) => OtpVerificationPage(destination: ''),
+                    ),
                   );
                 },
                 colorText: Colors.white,

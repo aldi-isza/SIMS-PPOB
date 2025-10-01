@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
+import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 import '../../widgets/widgets.dart';
 
 class PaymentPage extends StatelessWidget {
@@ -39,7 +40,11 @@ class PaymentPage extends StatelessWidget {
                 ],
               ),
               Gap(24),
-              CustomTextField(hintText: '10000', prefixIcon: Icons.money),
+              CustomTextField(
+                hintText: '10000',
+                prefixIcon: Icons.money,
+                label: '',
+              ),
               Gap(250),
               CustomButton(
                 text: 'Bayar',
