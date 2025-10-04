@@ -86,7 +86,6 @@ class _TopUpPageState extends State<TopUpPage> {
                   // tidak ada eror jika kosong
                   return null;
                 },
-                label: '',
               ),
               Gap(24),
               GridAmount(onSelected: _onAmountSelected),

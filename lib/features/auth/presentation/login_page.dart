@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sims_ppob/features/auth/presentation/otp_verification_page.dart';
 import 'package:sims_ppob/features/auth/presentation/register_page.dart';
-import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
-import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 
-import '../../widgets/widgets.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/buttons.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/text_label.dart';
+import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -14,7 +15,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(24),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,6 +33,7 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               Gap(32),
+
               Text(
                 textAlign: TextAlign.center,
 
@@ -43,11 +45,13 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               Gap(52),
+              TextLabel(label: 'Email'),
+              Gap(8),
               CustomTextField(
                 hintText: 'Masukkan email Anda',
                 prefixIcon: Icons.alternate_email,
                 keyboardType: TextInputType.emailAddress,
-                label: 'Email',
+
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Email tidak boleh kosong";
@@ -57,14 +61,16 @@ class LoginPage extends StatelessWidget {
               ),
 
               Gap(12),
-              CustomTextFieldPass(
-                label: "Password",
-                hint: 'Masukan Password anda',
-              ),
-              Gap(52),
-              CustomButton(
-                text: 'Masuk',
-                color: Colors.red,
+              TextLabel(label: 'Password'),
+              Gap(8),
+              CustomTextFieldPass(hint: 'Masukan Password anda'),
+
+              Gap(24),
+              Row(children: [ 
+                
+              ],),
+              Button.filled(
+                label: "Login",
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -74,14 +80,14 @@ class LoginPage extends StatelessWidget {
                     ),
                   );
                 },
-                colorText: Colors.white,
               ),
-
-              Gap(24),
+              Gap(12),
+              Text('OR', style: TextStyle(color: AppColors.grey)),
+              Gap(12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Belum punya akun? registrasi'),
+                  Text('Don\'t have an account?'),
                   GestureDetector(
                     onTap:
                         () => Navigator.push(
@@ -91,10 +97,10 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                     child: Text(
-                      ' di sini',
+                      ' Sign Up',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.red,
+                        color: AppColors.primary,
                       ),
                     ),
                   ),

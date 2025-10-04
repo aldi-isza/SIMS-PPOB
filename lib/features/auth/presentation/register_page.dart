@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
+
 import 'package:sims_ppob/features/auth/provider/auth_provider.dart';
-import 'package:sims_ppob/presentation/pages/login/login_page.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/custom_button.dart';
+import 'package:sims_ppob/features/auth/presentation/login_page.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/buttons.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/text_label.dart';
+
 import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -38,7 +42,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     return Scaffold(
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(24),
         children: [
           const Gap(32),
           Row(
@@ -68,8 +72,9 @@ class _RegisterPageState extends State<RegisterPage> {
             key: _formKey,
             child: Column(
               children: [
+                TextLabel(label: 'Email'),
+                Gap(8),
                 CustomTextField(
-                  label: "Email",
                   hintText: "Masukkan email Anda",
                   prefixIcon: Icons.alternate_email,
                   keyboardType: TextInputType.emailAddress,
@@ -85,8 +90,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
                 const Gap(12),
+                TextLabel(label: 'First name'),
+
+                Gap(8),
                 CustomTextField(
-                  label: "Nama Depan",
                   hintText: "Masukkan nama depan Anda",
                   prefixIcon: Icons.person_outline,
                   controller: _firstNameController,
@@ -97,8 +104,9 @@ class _RegisterPageState extends State<RegisterPage> {
                               : null,
                 ),
                 const Gap(12),
+                TextLabel(label: 'Last name'),
+                Gap(8),
                 CustomTextField(
-                  label: "Nama Belakang",
                   hintText: "Masukkan nama belakang Anda",
                   prefixIcon: Icons.person_outline,
                   controller: _lastNameController,
@@ -109,14 +117,16 @@ class _RegisterPageState extends State<RegisterPage> {
                               : null,
                 ),
                 const Gap(12),
+                TextLabel(label: 'Password'),
+                Gap(8),
                 CustomTextFieldPass(
-                  label: "Password",
                   hint: "Masukkan password Anda",
                   controller: _passwordController,
                 ),
                 const Gap(12),
+                TextLabel(label: 'Confirm Password'),
+                Gap(8),
                 CustomTextFieldPass(
-                  label: "Ulangi Password",
                   hint: "Masukkan ulang password Anda",
                   controller: _confirmPasswordController,
                   validator: (value) {
@@ -138,10 +148,11 @@ class _RegisterPageState extends State<RegisterPage> {
           /// ✅ Button Register
           authProvider.isLoading
               ? const Center(child: CircularProgressIndicator())
-              : CustomButton(
-                text: 'Register',
-                color: Colors.red,
-                colorText: Colors.black,
+              : Button.filled(
+                label: 'Register',
+
+                color: AppColors.primary,
+
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     await authProvider.register(
@@ -193,7 +204,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       MaterialPageRoute(builder: (_) => const LoginPage()),
                     ),
                 child: const Text(
-                  ' Login di sini',
+                  ' Login',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.red,

@@ -40,11 +40,7 @@ class PaymentPage extends StatelessWidget {
                 ],
               ),
               Gap(24),
-              CustomTextField(
-                hintText: '10000',
-                prefixIcon: Icons.money,
-                label: '',
-              ),
+              CustomTextField(hintText: '10000', prefixIcon: Icons.money),
               Gap(250),
               CustomButton(
                 text: 'Bayar',

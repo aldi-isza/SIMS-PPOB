@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
 
 /// ===============================
 /// Custom Text Field Umum
 /// ===============================
 class CustomTextField extends StatelessWidget {
-  final String label;
   final String hintText;
   final IconData prefixIcon;
   final TextInputType keyboardType;
@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
 
   const CustomTextField({
     super.key,
-    required this.label,
+
     required this.hintText,
     required this.prefixIcon,
     this.keyboardType = TextInputType.text,
@@ -37,18 +37,18 @@ class CustomTextField extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: keyboardType,
       obscureText: obscureText,
-      style: const TextStyle(color: Colors.black),
+      style: const TextStyle(color: AppColors.black),
       decoration: InputDecoration(
-        labelText: label,
         hintText: hintText,
-        prefixIcon: Icon(prefixIcon, color: Colors.grey),
+        hintStyle: TextStyle(color: AppColors.grey),
+        prefixIcon: Icon(prefixIcon, color: AppColors.grey),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey, width: 1),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
           borderRadius: BorderRadius.circular(8),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 2),
+          borderSide: const BorderSide(color: AppColors.primary, width: 2),
           borderRadius: BorderRadius.circular(8),
         ),
       ),
@@ -60,7 +60,6 @@ class CustomTextField extends StatelessWidget {
 /// Custom Text Field Password
 /// ===============================
 class CustomTextFieldPass extends StatefulWidget {
-  final String label;
   final String hint;
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
@@ -69,7 +68,7 @@ class CustomTextFieldPass extends StatefulWidget {
 
   const CustomTextFieldPass({
     super.key,
-    required this.label,
+
     required this.hint,
     this.controller,
     this.onChanged,
@@ -91,29 +90,29 @@ class _CustomTextFieldPassState extends State<CustomTextFieldPass> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: _obscureText,
       obscuringCharacter: '•',
-      style: const TextStyle(color: Colors.black),
+      style: const TextStyle(color: AppColors.black),
       onChanged: widget.onChanged,
       validator:
           widget.validator ??
           (value) {
             if (value == null || value.isEmpty) {
-              return "${widget.label} tidak boleh kosong";
+              return " tidak boleh kosong";
             }
             if (value.length < widget.minLength) {
-              return "${widget.label} minimal ${widget.minLength} karakter";
+              return " minimal ${widget.minLength} karakter";
             }
             return null;
           },
       decoration: InputDecoration(
-        labelText: widget.label,
         hintText: widget.hint,
-        prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
+        hintStyle: TextStyle(color: AppColors.grey),
+        prefixIcon: const Icon(Icons.lock_outline, color: AppColors.grey),
         suffixIcon: IconButton(
           icon: Icon(
             _obscureText
                 ? Icons.visibility_off_outlined
                 : Icons.visibility_outlined,
-            color: Colors.grey,
+            color: AppColors.grey,
           ),
           onPressed: () {
             setState(() {
@@ -123,11 +122,11 @@ class _CustomTextFieldPassState extends State<CustomTextFieldPass> {
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey, width: 1),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
           borderRadius: BorderRadius.circular(8),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 2),
+          borderSide: const BorderSide(color: AppColors.primary, width: 2),
           borderRadius: BorderRadius.circular(8),
         ),
       ),
