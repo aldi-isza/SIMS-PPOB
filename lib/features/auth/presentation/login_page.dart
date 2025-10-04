@@ -3,9 +3,9 @@ import 'package:gap/gap.dart';
 import 'package:sims_ppob/features/auth/presentation/otp_verification_page.dart';
 import 'package:sims_ppob/features/auth/presentation/register_page.dart';
 
-import 'package:sims_ppob/presentation/widgets/buttons/buttons.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/text_label.dart';
+import 'package:sims_ppob/common/widgets/button_widget.dart';
+import 'package:sims_ppob/core/constants/colors.dart';
+import 'package:sims_ppob/common/widgets/text_label.dart';
 import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 
 class LoginPage extends StatelessWidget {
@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
               Row(children: [ 
                 
               ],),
-              Button.filled(
+              ButtonWidget.filled(
                 label: "Login",
                 onPressed: () {
                   Navigator.push(

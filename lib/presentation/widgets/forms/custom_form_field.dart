@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
+import 'package:sims_ppob/core/constants/colors.dart';
 
 /// ===============================
 /// Custom Text Field Umum

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sims_ppob/presentation/pages/home/home_page.dart';
-import 'package:sims_ppob/presentation/pages/profile/profile_page.dart';
-import 'package:sims_ppob/presentation/pages/top_up/top_up_page.dart';
-import 'package:sims_ppob/presentation/pages/transaction/transaction_page.dart';
+import 'package:sims_ppob/features/home/presentation/home_page.dart';
+import 'package:sims_ppob/features/profile/profile_page.dart';
+import 'package:sims_ppob/features/top_up/top_up_page.dart';
+import 'package:sims_ppob/features/transaction/transaction_page.dart';
 import 'package:sims_ppob/presentation/widgets/navigation/custom_nav_item.dart';
 
 class DashboardPage extends StatefulWidget {

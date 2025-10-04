@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:sims_ppob/presentation/pages/dashboard/dashboard_page.dart';
+import 'package:sims_ppob/features/dashboard/presentation/dashboard_page.dart';
 import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
-import '../../widgets/widgets.dart';
+import '../../presentation/widgets/widgets.dart';
 
 class PaymentPage extends StatelessWidget {
   final String label;

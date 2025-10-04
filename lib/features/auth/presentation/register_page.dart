@@ -4,9 +4,9 @@ import 'package:provider/provider.dart';
 
 import 'package:sims_ppob/features/auth/provider/auth_provider.dart';
 import 'package:sims_ppob/features/auth/presentation/login_page.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/buttons.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/text_label.dart';
+import 'package:sims_ppob/common/widgets/button_widget.dart';
+import 'package:sims_ppob/core/constants/colors.dart';
+import 'package:sims_ppob/common/widgets/text_label.dart';
 
 import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
 
@@ -148,7 +148,7 @@ class _RegisterPageState extends State<RegisterPage> {
           /// ✅ Button Register
           authProvider.isLoading
               ? const Center(child: CircularProgressIndicator())
-              : Button.filled(
+              : ButtonWidget.filled(
                 label: 'Register',
 
                 color: AppColors.primary,

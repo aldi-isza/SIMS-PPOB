@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sims_ppob/features/auth/provider/auth_provider.dart';
-import 'package:sims_ppob/presentation/pages/splash/splash_page.dart';
+import 'package:sims_ppob/features/splash/splash_page.dart';
 
 void main() {
   runApp(

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import 'package:sims_ppob/common/widgets/button_widget.dart';
+import 'package:sims_ppob/features/dashboard/presentation/dashboard_page.dart';
 
 class OtpVerificationPage extends StatefulWidget {
   final String destination; // email atau nomor WA tujuan OTP
@@ -211,28 +213,15 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
             ),
 
             const SizedBox(height: 24),
-
-            /// Submit Button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: _submitOtp,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Text(
-                  "Submit",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+            ButtonWidget.filled(
+              onPressed: () {
+                _submitOtp();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const DashboardPage()),
+                );
+              },
+              label: 'Submit',
             ),
 
             const SizedBox(height: 16),

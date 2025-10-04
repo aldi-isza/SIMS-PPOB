@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sims_ppob/presentation/widgets/buttons/colors.dart';
+import 'package:sims_ppob/core/constants/colors.dart';
 
 enum ButtonStyle { filled, outlined }
 
-class Button extends StatelessWidget {
-  const Button.filled({
+class ButtonWidget extends StatelessWidget {
+  const ButtonWidget.filled({
     super.key,
     required this.onPressed,
     required this.label,
@@ -19,7 +19,7 @@ class Button extends StatelessWidget {
     this.fontSize = 16.0,
   });
 
-  const Button.outlined({
+  const ButtonWidget.outlined({
     super.key,
     required this.onPressed,
     required this.label,
