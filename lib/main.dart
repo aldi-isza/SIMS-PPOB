@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sims_ppob/core/providers/saldo_provider.dart';
 import 'package:sims_ppob/features/auth/provider/auth_provider.dart';
 import 'package:sims_ppob/features/splash/splash_page.dart';
 
 void main() {
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => SaldoProvider()),
+      ],
       child: const MyApp(),
     ),
   );

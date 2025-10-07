@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:sims_ppob/common/widgets/button_widget.dart';
 import 'package:sims_ppob/features/auth/presentation/login_page.dart';
 import 'package:sims_ppob/common/widgets/forms/custom_form_field.dart';
 import '../../common/widgets/widgets.dart';
@@ -67,21 +68,15 @@ class _ProfilePageState extends State<ProfilePage> {
             Gap(8),
             CustomTextField(hintText: 'Isza', prefixIcon: Icons.person_outline),
             Gap(24),
-
-            CustomButton(
-              text: _isEditing ? 'Simpan' : 'Edit Profil',
-              color: Colors.red,
+            ButtonWidget.outlined(
               onPressed: _toggleEditMode,
-              colorText: Colors.white,
+              label: _isEditing ? 'Simpan' : 'Edit Profil',
             ),
+
             Gap(24),
-            CustomButton(
-              colorBorder: Colors.red,
-              text: _isEditing ? 'Batalkan' : 'Logout',
-              color: Colors.white,
-              // jika
+            ButtonWidget.filled(
               onPressed: _isEditing ? _toggleEditMode : _logout,
-              colorText: Colors.red,
+              label: _isEditing ? 'Batalkan' : 'Logout',
             ),
           ],
         ),

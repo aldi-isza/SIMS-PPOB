@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:sims_ppob/core/providers/saldo_provider.dart';
 
-
 class SaldoCard extends StatelessWidget {
   const SaldoCard({super.key, required int saldo, required bool showVisibilityToggle});
 
@@ -21,10 +20,8 @@ class SaldoCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Saldo Anda",
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
+              const Text("Saldo Anda",
+                  style: TextStyle(color: Colors.white, fontSize: 16)),
               const SizedBox(height: 8),
               Text(
                 saldoProvider.isHidden
@@ -35,14 +32,14 @@ class SaldoCard extends StatelessWidget {
                         decimalDigits: 0,
                       ).format(saldoProvider.saldo),
                 style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              GestureDetector(
-                onTap: () => saldoProvider.toggleVisibility(),
+              InkWell(
+                onTap: saldoProvider.toggleVisibility,
+                borderRadius: BorderRadius.circular(8),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -50,7 +47,8 @@ class SaldoCard extends StatelessWidget {
                       saldoProvider.isHidden
                           ? "Tampilkan Saldo"
                           : "Sembunyikan Saldo",
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
+                      style:
+                          const TextStyle(color: Colors.white, fontSize: 12),
                     ),
                     const SizedBox(width: 8),
                     Icon(
@@ -62,7 +60,7 @@ class SaldoCard extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         );

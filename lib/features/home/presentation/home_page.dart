@@ -59,7 +59,7 @@ class Homepage extends StatelessWidget {
               ),
               Gap(32),
 
-              SaldoCard(saldo: 2000000, showVisibilityToggle: true),
+              SaldoCard(saldo: 2000000, showVisibilityToggle: false),
               Gap(24),
               GridView.builder(
                 shrinkWrap: true,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:sims_ppob/common/widgets/button_widget.dart';
 import 'package:sims_ppob/features/dashboard/presentation/dashboard_page.dart';
 import 'package:sims_ppob/common/widgets/forms/custom_form_field.dart';
 import '../../common/widgets/card/saldo_card_widget.dart';
@@ -43,14 +44,11 @@ class PaymentPage extends StatelessWidget {
               Gap(24),
               CustomTextField(hintText: '10000', prefixIcon: Icons.money),
               Gap(250),
-              CustomButton(
-                text: 'Bayar',
-                color: Colors.red,
+              ButtonWidget.filled(
                 onPressed: () {
-                  // mengirim label
                   _showConfirmationDialog(context, label);
                 },
-                colorText: Colors.white,
+                label: 'Bayar',
               ),
             ],
           ),

@@ -91,16 +91,16 @@ class _TopUpPageState extends State<TopUpPage> {
               Gap(24),
               GridAmount(onSelected: _onAmountSelected),
 
-              CustomButton(
-                text: 'Top Up',
-                color: _isButtonActive ? Colors.red : Colors.grey,
-                onPressed: () {
-                  if (_isButtonActive == true) {
-                    _showConfirmationDialog(context);
-                  }
-                },
-                colorText: Colors.white,
-              ),
+              // CustomButton(
+              //   text: 'Top Up',
+              //   color: _isButtonActive ? Colors.red : Colors.grey,
+              //   onPressed: () {
+              //     if (_isButtonActive == true) {
+              //       _showConfirmationDialog(context);
+              //     }
+              //   },
+              //   colorText: Colors.white,
+              // ),
             ],
           ),
         ),

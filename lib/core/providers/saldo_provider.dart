@@ -14,5 +14,6 @@ class SaldoProvider extends ChangeNotifier {
 
   void toggleVisibility() {
     _isHidden = !_isHidden;
+    notifyListeners();
   }
 }
