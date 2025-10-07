@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:sims_ppob/common/widgets/card/saldo_card_widget.dart';
 
-import '../../presentation/widgets/widgets.dart';
+import '../../common/widgets/widgets.dart';
 
 class TransactionPage extends StatelessWidget {
   const TransactionPage({super.key});
@@ -18,7 +19,7 @@ class TransactionPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SaldoCard(saldo: 2000000, showVisibilityToggle: false),
+            SaldoCard(saldo: 2000000, showVisibilityToggle: false,),
             Gap(38),
             Text(
               'Transaksi',

@@ -5,7 +5,7 @@ import 'package:sims_ppob/core/providers/saldo_provider.dart';
 
 
 class SaldoCard extends StatelessWidget {
-  const SaldoCard({super.key});
+  const SaldoCard({super.key, required int saldo, required bool showVisibilityToggle});
 
   @override
   Widget build(BuildContext context) {

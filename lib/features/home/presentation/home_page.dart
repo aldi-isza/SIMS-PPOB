@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:sims_ppob/data/models/banner/banner_model.dart';
-import 'package:sims_ppob/data/models/payment/payment_model.dart';
-import 'package:sims_ppob/features/payment/payment_page.dart';
-import '../../../presentation/widgets/widgets.dart';
 
-class Homepage extends StatefulWidget {
+import 'package:sims_ppob/features/home/data/models/banner_model.dart';
+import 'package:sims_ppob/features/payment/data/models/payment_model.dart';
+import 'package:sims_ppob/common/widgets/card/saldo_card_widget.dart';
+import 'package:sims_ppob/features/payment/payment_page.dart';
+import '../../../common/widgets/widgets.dart';
+
+class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
-  @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

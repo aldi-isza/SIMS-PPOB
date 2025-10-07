@@ -8,7 +8,7 @@ import 'package:sims_ppob/common/widgets/button_widget.dart';
 import 'package:sims_ppob/core/constants/colors.dart';
 import 'package:sims_ppob/common/widgets/text_label.dart';
 
-import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
+import 'package:sims_ppob/common/widgets/forms/custom_form_field.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

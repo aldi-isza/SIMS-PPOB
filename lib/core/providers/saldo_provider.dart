@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class HomeProvider extends ChangeNotifier {
+class SaldoProvider extends ChangeNotifier {
   int _saldo = 0;
   bool _isHidden = false;
 
@@ -14,6 +14,5 @@ class HomeProvider extends ChangeNotifier {
 
   void toggleVisibility() {
     _isHidden = !_isHidden;
-    notifyListeners();
   }
 }

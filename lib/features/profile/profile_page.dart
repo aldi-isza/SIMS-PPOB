@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sims_ppob/features/auth/presentation/login_page.dart';
-import 'package:sims_ppob/presentation/widgets/forms/custom_form_field.dart';
-import '../../presentation/widgets/widgets.dart';
+import 'package:sims_ppob/common/widgets/forms/custom_form_field.dart';
+import '../../common/widgets/widgets.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
