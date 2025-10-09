@@ -1,10 +1,9 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:sims_ppob/core/services/local_storage_service.dart';
 import 'package:sims_ppob/features/auth/data/auth_api.dart';
 import 'package:sims_ppob/features/auth/data/models/login_request.dart';
 import 'package:sims_ppob/features/auth/data/models/login_response.dart';
+import 'package:sims_ppob/features/auth/data/models/register_request.dart';
 import 'package:sims_ppob/features/auth/data/models/register_response.dart';
 
 class AuthProvide extends ChangeNotifier {
@@ -53,48 +52,76 @@ class AuthProvide extends ChangeNotifier {
   bool _validatePassword(String password) => password.length >= 8;
 
   // REGISTER
-  Future<void> Register({
+  Future<void> register({
     required String email,
     required String firstName,
     required String lastName,
     required String password,
   }) async {
-    if (!_validationEmail(email)) {}
+    if (!_validationEmail(email)) {
+      _setError("Format email tidak valid");
+      return;
+    }
+    if (!_validatePassword(password)) {
+      _setError("Passwword minimal 9 karakter");
+    }
+    _setLoading(true);
+    _clearError();
+
+    try {
+      final req = RegisterRequest(
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        password: password,
+      );
+      final res = await _api.register(req);
+      _registerResponse = res;
+      if (!res.success) {
+        _setError(res.message);
+      }
+    } catch (e) {
+      _setError('Gagal register: $e');
+    } finally {
+      _setLoading(false);
+    }
   }
 
-  Future<void> Login({required String email, required String password}) async {
-    final emailregExp = RegExp(
-      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-].\[a-zA-Z0-9]{2,}$',
-    );
-    if (!emailregExp.hasMatch(email)) {
-      _errorMessage = 'Format tidak valid';
-      notifyListeners();
+  // LOGIN
+  Future<void> login({required String email, required String password}) async {
+    if (!_validationEmail(email)) {
+      _setError("Format email tidak valid");
       return;
     }
     // password has min 8 character
-    if (password.length < 8) {
-      _errorMessage = 'Password minimal 8 karakter';
-      notifyListeners();
+    if (!_validatePassword(password)) {
+      _setError("Password minimal 8 karakter");
       return;
     }
 
-    _isLoading = true;
-    _errorMessage = null;
-    notifyListeners();
+    _setLoading(true);
+    _clearError();
 
     try {
-      final request = LoginRequest(email: email, password: password);
-      _loginResponse = await _api.login(request);
-      if (!_loginResponse!.success) {
-        _errorMessage = _loginResponse!.message;
+      final req = LoginRequest(email: email, password: password);
+      final res = await _api.login(req);
+      _loginResponse = res;
+      if (res.success && res.token != null) {
+        _token = res.token;
+        _isAunthenticated = true;
+
+        // save token -> SharedPreferences
+        await _storage.saveToken(_token!);
+        if (kDebugMode) {
+          print("Login sukses, token disimpan: $_token");
+        }
       } else {
-        print("JWT TOKEN : ${_loginResponse!.token}");
+        _setError(res.message);
       }
     } catch (e) {
-      _errorMessage = e.toString();
+      _setError("Gagal login: $e");
     } finally {
-      _isLoading = false;
-      notifyListeners();
+      _setLoading(false);
     }
   }
 }
